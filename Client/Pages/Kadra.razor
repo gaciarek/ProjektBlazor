@@ -1,0 +1,70 @@
+﻿@page "/kadra"
+<h1><center>KADRA NA SEZON 2021/2022</center></h1>
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Numer</th>
+                <th scope="col">Imię i Nazwisko</th>
+                <th scope="col">Wiek</th>
+                <th scope="col">Narodowość</th>
+                <th scope="col">Pozycja</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var k in kadra)
+            {
+            <tr>
+                <td>@k.numer</td>
+                <td>@k.imie_nazwisko</td>
+                <td>@k.wiek</td>
+                <td>@k.narodowosc</td>
+                <td>@k.pozycja</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+@code {
+    List<kadras> kadra;
+    protected override void OnInitialized()
+    {
+        kadra = new List<kadras>()
+            {
+                new kadras(){numer = 1, imie_nazwisko= "Alisson Becker",wiek = 30, narodowosc = "brazylijska", pozycja = "Bramkarz"},
+                new kadras(){numer = 3, imie_nazwisko= "Fabinho",wiek = 29, narodowosc = "brazylijska", pozycja = "Pomocnik"},
+                new kadras(){numer = 4, imie_nazwisko= "Virgil van Dijk",wiek = 31, narodowosc = "holenderska", pozycja = "Obrońca"},
+                new kadras(){numer = 5, imie_nazwisko= "Ibrahima Konaté",wiek = 23, narodowosc = "francuska", pozycja = "Obrońca"},
+                new kadras(){numer = 6, imie_nazwisko= "Thiago Alcântara",wiek = 31, narodowosc = "hiszpańska", pozycja = "Pomocnik"},
+                new kadras(){numer = 7, imie_nazwisko= "James Milner",wiek = 36, narodowosc = "angielska", pozycja = "Pomocnik"},
+                new kadras(){numer = 8, imie_nazwisko= "Naby Keïta",wiek = 27, narodowosc = "gwinejska", pozycja = "Pomocnik"},
+                new kadras(){numer = 9, imie_nazwisko= "Roberto Firmino",wiek = 31, narodowosc = "brazylijska", pozycja = "Napastnik"},
+                new kadras(){numer = 10, imie_nazwisko= "Sadio Mané",wiek = 30, narodowosc = "senegalska", pozycja = "Napastnik"},
+                new kadras(){numer = 11, imie_nazwisko= "Mohamed Salah",wiek = 30, narodowosc = "egipska", pozycja = "Napastnik"},
+                new kadras(){numer = 12, imie_nazwisko= "Joe Gomez",wiek = 25, narodowosc = "angielska", pozycja = "Obrońca"},
+                new kadras(){numer = 13, imie_nazwisko= "Adrián",wiek = 35, narodowosc = "hiszpańska", pozycja = "Bramkarz"},
+                new kadras(){numer = 14, imie_nazwisko= "Jordan Henderson",wiek = 32, narodowosc = "angielska", pozycja = "Pomocnik"},
+                new kadras(){numer = 15, imie_nazwisko= "Alex Oxlade-Chamberlain",wiek = 29, narodowosc = "angielska", pozycja = "Pomocnik"},
+                new kadras(){numer = 17, imie_nazwisko= "Curtis Jones",wiek = 21, narodowosc = "angielska", pozycja = "Pomocnik"},
+                new kadras(){numer = 18, imie_nazwisko= "Takumi Minamino",wiek = 27, narodowosc = "japońska", pozycja = "Pomocnik"},
+                new kadras(){numer = 20, imie_nazwisko= "Diogo Jota",wiek = 26, narodowosc = "portugalska", pozycja = "Pomocnik"},
+                new kadras(){numer = 21, imie_nazwisko= "Konstantinos Tsimikas",wiek = 26, narodowosc = "grecka", pozycja = "obrońca"},
+                new kadras(){numer = 22, imie_nazwisko= "Loris Karius",wiek = 29, narodowosc = "niemiecka", pozycja = "bramkarz"},
+                new kadras(){numer = 23, imie_nazwisko= "Luis Díaz",wiek = 25, narodowosc = "kolumbijska", pozycja = "napastnik"},
+                new kadras(){numer = 26, imie_nazwisko= "Andrew Robertson",wiek = 28, narodowosc = "szkocka", pozycja = "obrońca"},
+                new kadras(){numer = 27, imie_nazwisko= "Divock Origi",wiek = 27, narodowosc = "belgijska", pozycja = "napastnik"},
+                new kadras(){numer = 32, imie_nazwisko= "Joël Matip",wiek = 31, narodowosc = "kameruńska", pozycja = "obrońca"},
+                new kadras(){numer = 46, imie_nazwisko= "Rhys Williams",wiek = 21, narodowosc = "angielska", pozycja = "obrońca"},
+                new kadras(){numer = 49, imie_nazwisko= "Kaide Gordon",wiek = 18, narodowosc = "angielska", pozycja = "napastnik"},
+                new kadras(){numer = 62, imie_nazwisko= "Caoimhín Kelleher",wiek = 24, narodowosc = "irlandzka", pozycja = "bramkarz"},
+                new kadras(){numer = 65, imie_nazwisko= "Leighton Clarkson",wiek = 21, narodowosc = "angielska", pozycja = "Pomocnik"},
+                new kadras(){numer = 66, imie_nazwisko= "Trent Alexander-Arnold",wiek = 24, narodowosc = "angielska", pozycja = "obrońca"},
+                new kadras(){numer = 67, imie_nazwisko= "Harvey Elliott",wiek = 19, narodowosc = "angielska", pozycja = "napastnik"},
+                new kadras(){numer = 80, imie_nazwisko= "Tyler Morton",wiek = 20, narodowosc = "angielska", pozycja = "Pomocnik"},
+
+    };
+}
+
+}
