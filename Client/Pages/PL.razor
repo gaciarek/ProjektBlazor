@@ -1,5 +1,8 @@
 ﻿@page "/PL"
-<h1><center>TABELA PREMIER LEAGUE 2021/2022</center></h1>
+    <div>
+        <img src="PremierLeague.jpg" style="width: 10%;height: 90px; float:left; margin-top:-10px " />
+        <h1><center>TABELA PREMIER LEAGUE 2021/2022</center></h1>
+    </div>
     <div class="mt-5">
         <table class="table">
             <thead>
@@ -19,107 +22,112 @@
             <tbody>
                 @foreach (var t in tabela)
                 {
-                if (t.miejsce<5) {
-                <tr>
-                    <td bgcolor="blue">@t.miejsce</td>
-                    <td bgcolor="blue">@t.druzyna</td>
-                    <td bgcolor="blue">@t.mecze</td>
-                    <td bgcolor="blue">@t.zwyciestwo</td>
-                    <td bgcolor="blue">@t.remis</td>
-                    <td bgcolor="blue">@t.porazka</td>
-                    <td bgcolor="blue">@t.gz</td>
-                    <td bgcolor="blue">@t.gs</td>
-                    <td bgcolor="blue">@t.bilans</td>
-                    <th bgcolor="blue">@t.punkty</th>
-                </tr>
-                             }
-                else if (t.miejsce==5 || t.miejsce==6){
-                                          <tr>
-                    <td bgcolor="orange">@t.miejsce</td>
-                    <td bgcolor="orange">@t.druzyna</td>
-                    <td bgcolor="orange">@t.mecze</td>
-                    <td bgcolor="orange">@t.zwyciestwo</td>
-                    <td bgcolor="orange">@t.remis</td>
-                    <td bgcolor="orange">@t.porazka</td>
-                    <td bgcolor="orange">@t.gz</td>
-                    <td bgcolor="orange">@t.gs</td>
-                    <td bgcolor="orange">@t.bilans</td>
-                    <th bgcolor="orange">@t.punkty</th>
-                </tr>
-                                          }
-                else if (t.miejsce==7){
-                                          <tr>
-                                              <td bgcolor="green">@t.miejsce</td>
-                                              <td bgcolor="green">@t.druzyna</td>
-                                              <td bgcolor="green">@t.mecze</td>
-                                              <td bgcolor="green">@t.zwyciestwo</td>
-                                              <td bgcolor="green">@t.remis</td>
-                                              <td bgcolor="green">@t.porazka</td>
-                                              <td bgcolor="green">@t.gz</td>
-                                              <td bgcolor="green">@t.gs</td>
-                                              <td bgcolor="green">@t.bilans</td>
-                                              <th bgcolor="green">@t.punkty</th>
-                                          </tr>
-                }
-                    else if (t.miejsce>17){
-                                          <tr>
-                                              <td bgcolor="red">@t.miejsce</td>
-                                              <td bgcolor="red">@t.druzyna</td>
-                                              <td bgcolor="red">@t.mecze</td>
-                                              <td bgcolor="red">@t.zwyciestwo</td>
-                                              <td bgcolor="red">@t.remis</td>
-                                              <td bgcolor="red">@t.porazka</td>
-                                              <td bgcolor="red">@t.gz</td>
-                                              <td bgcolor="red">@t.gs</td>
-                                              <td bgcolor="red">@t.bilans</td>
-                                              <th bgcolor="red">@t.punkty</th>
-                                          </tr>
-                }
-                else{
-                                          <tr>
-                                              <td>@t.miejsce</td>
-                                              <td>@t.druzyna</td>
-                                              <td>@t.mecze</td>
-                                              <td>@t.zwyciestwo</td>
-                                              <td>@t.remis</td>
-                                              <td>@t.porazka</td>
-                                              <td>@t.gz</td>
-                                              <td>@t.gs</td>
-                                              <td>@t.bilans</td>
-                                              <th>@t.punkty</th>
-                                          </tr>
-                }
+                    if (t.miejsce < 5)
+                    {
+                        <tr>
+                            <td bgcolor="blue">@t.miejsce</td>
+                            <td bgcolor="blue">@t.druzyna</td>
+                            <td bgcolor="blue">@t.mecze</td>
+                            <td bgcolor="blue">@t.zwyciestwo</td>
+                            <td bgcolor="blue">@t.remis</td>
+                            <td bgcolor="blue">@t.porazka</td>
+                            <td bgcolor="blue">@t.gz</td>
+                            <td bgcolor="blue">@t.gs</td>
+                            <td bgcolor="blue">@t.bilans</td>
+                            <th bgcolor="blue">@t.punkty</th>
+                        </tr>
+                    }
+                    else if (t.miejsce == 5 || t.miejsce == 6)
+                    {
+                        <tr>
+                            <td bgcolor="orange">@t.miejsce</td>
+                            <td bgcolor="orange">@t.druzyna</td>
+                            <td bgcolor="orange">@t.mecze</td>
+                            <td bgcolor="orange">@t.zwyciestwo</td>
+                            <td bgcolor="orange">@t.remis</td>
+                            <td bgcolor="orange">@t.porazka</td>
+                            <td bgcolor="orange">@t.gz</td>
+                            <td bgcolor="orange">@t.gs</td>
+                            <td bgcolor="orange">@t.bilans</td>
+                            <th bgcolor="orange">@t.punkty</th>
+                        </tr>
+                    }
+                    else if (t.miejsce == 7)
+                    {
+                        <tr>
+                            <td bgcolor="green">@t.miejsce</td>
+                            <td bgcolor="green">@t.druzyna</td>
+                            <td bgcolor="green">@t.mecze</td>
+                            <td bgcolor="green">@t.zwyciestwo</td>
+                            <td bgcolor="green">@t.remis</td>
+                            <td bgcolor="green">@t.porazka</td>
+                            <td bgcolor="green">@t.gz</td>
+                            <td bgcolor="green">@t.gs</td>
+                            <td bgcolor="green">@t.bilans</td>
+                            <th bgcolor="green">@t.punkty</th>
+                        </tr>
+                    }
+                    else if (t.miejsce > 17)
+                    {
+                        <tr>
+                            <td bgcolor="red">@t.miejsce</td>
+                            <td bgcolor="red">@t.druzyna</td>
+                            <td bgcolor="red">@t.mecze</td>
+                            <td bgcolor="red">@t.zwyciestwo</td>
+                            <td bgcolor="red">@t.remis</td>
+                            <td bgcolor="red">@t.porazka</td>
+                            <td bgcolor="red">@t.gz</td>
+                            <td bgcolor="red">@t.gs</td>
+                            <td bgcolor="red">@t.bilans</td>
+                            <th bgcolor="red">@t.punkty</th>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td>@t.miejsce</td>
+                            <td>@t.druzyna</td>
+                            <td>@t.mecze</td>
+                            <td>@t.zwyciestwo</td>
+                            <td>@t.remis</td>
+                            <td>@t.porazka</td>
+                            <td>@t.gz</td>
+                            <td>@t.gs</td>
+                            <td>@t.bilans</td>
+                            <th>@t.punkty</th>
+                        </tr>
+                    }
                 }
             </tbody>
         </table>
     </div>
-<div>
-    <table>
-        <tr>
-            <td bgcolor="blue"><span style="color: blue">11111</span></td>
-            <td>Awans do Ligi Mistrzów</td>
-        </tr>
-        <tr>
-            <td bgcolor="orange"><span style="color: orange">11111</span></td>
-            <td>Awans do Ligi Europy</td>
-        </tr>
-        <tr>
-            <td bgcolor="green"><span style="color: green">11111</span></td>
-            <td>Awans do Ligi Konfederacji</td>
-        </tr>
-        <tr>
-            <td bgcolor="red"><span style="color: red">11111</span></td>
-            <td>Spadek do Championship</td>
-        </tr>
-    </table>
-</div>
+    <div>
+        <table>
+            <tr>
+                <td bgcolor="blue"><span style="color: blue">11111</span></td>
+                <td>Awans do Ligi Mistrzów</td>
+            </tr>
+            <tr>
+                <td bgcolor="orange"><span style="color: orange">11111</span></td>
+                <td>Awans do Ligi Europy</td>
+            </tr>
+            <tr>
+                <td bgcolor="green"><span style="color: green">11111</span></td>
+                <td>Awans do Ligi Konfederacji</td>
+            </tr>
+            <tr>
+                <td bgcolor="red"><span style="color: red">11111</span></td>
+                <td>Spadek do Championship</td>
+            </tr>
+        </table>
+    </div>
     @code {
-    List<ligi>
-        tabela;
+        List<ligi>
+            tabela;
         protected override void OnInitialized()
         {
-        tabela = new List<ligi>
-    ()
+            tabela = new List<ligi>
+        ()
     {
     new ligi(){miejsce=1, druzyna="Manchester City", mecze=34, zwyciestwo=26, remis=5, porazka=3, gz=84, gs=21, bilans= +63, punkty=83},
     new ligi(){miejsce=2, druzyna="Liverpool", mecze=34, zwyciestwo=25, remis=7, porazka=2, gz=86, gs=22, bilans= +64, punkty=82},
@@ -142,5 +150,5 @@
     new ligi(){miejsce=19, druzyna="Watford", mecze=34, zwyciestwo=6, remis=4, porazka=24, gz=32, gs=69, bilans= -37, punkty=22},
     new ligi(){miejsce=20, druzyna="Norwich", mecze=34, zwyciestwo=5, remis=6, porazka=23, gz=22, gs=71, bilans= -49, punkty=21},
     };
-    }
+        }
     }
