@@ -1,0 +1,180 @@
+﻿@page "/LM"
+<h1><center>LIGA MISTRZÓW 2021/2022</center></h1>
+<hr />
+<h3><center>FAZA GRUPOWA</center></h3>
+
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Pozycja</th>
+                <th scope="col">Drużyna</th>
+                <th scope="col">Mecze</th>
+                <th scope="col">Zwycięstwa</th>
+                <th scope="col">Remisy</th>
+                <th scope="col">Porażki</th>
+                <th scope="col">Bramki zdobyte</th>
+                <th scope="col">Bramki stracone</th>
+                <th scope="col">Bilans</th>
+                <th scope="col"><b>Punkty</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var t in tabela)
+            {
+                if (t.miejsce < 3)
+                {
+                    <tr>
+                        <td bgcolor="blue">@t.miejsce</td>
+                        <td bgcolor="blue">@t.druzyna</td>
+                        <td bgcolor="blue">@t.mecze</td>
+                        <td bgcolor="blue">@t.zwyciestwo</td>
+                        <td bgcolor="blue">@t.remis</td>
+                        <td bgcolor="blue">@t.porazka</td>
+                        <td bgcolor="blue">@t.gz</td>
+                        <td bgcolor="blue">@t.gs</td>
+                        <td bgcolor="blue">@t.bilans</td>
+                        <th bgcolor="blue">@t.punkty</th>
+                    </tr>
+                }
+                else if (t.miejsce == 3)
+                {
+                    <tr>
+                        <td bgcolor="orange">@t.miejsce</td>
+                        <td bgcolor="orange">@t.druzyna</td>
+                        <td bgcolor="orange">@t.mecze</td>
+                        <td bgcolor="orange">@t.zwyciestwo</td>
+                        <td bgcolor="orange">@t.remis</td>
+                        <td bgcolor="orange">@t.porazka</td>
+                        <td bgcolor="orange">@t.gz</td>
+                        <td bgcolor="orange">@t.gs</td>
+                        <td bgcolor="orange">@t.bilans</td>
+                        <th bgcolor="orange">@t.punkty</th>
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <td>@t.miejsce</td>
+                        <td>@t.druzyna</td>
+                        <td>@t.mecze</td>
+                        <td>@t.zwyciestwo</td>
+                        <td>@t.remis</td>
+                        <td>@t.porazka</td>
+                        <td>@t.gz</td>
+                        <td>@t.gs</td>
+                        <td>@t.bilans</td>
+                        <th>@t.punkty</th>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <table>
+        <tr>
+            <td bgcolor="blue"><span style="color: blue">11111</span></td>
+            <td>Awans do 1/8 finału</td>
+        </tr>
+        <tr>
+            <td bgcolor="orange"><span style="color: orange">11111</span></td>
+            <td>Awans do 1/16 finału Ligi Europy</td>
+        </tr>
+    </table>
+    <hr />
+    1 kolejka:
+    <center>Liverpool<span style="color: green"><b> 3 - 2 </b></span>A.C. Milan</center>
+    <hr />
+</div>
+<div>
+    <hr />
+    2 kolejka:
+    <center>F.C. Porto<span style="color: green"><b> 1 - 5 </b></span>Liverpool</center>
+    <hr />
+</div>
+<div>
+    <hr />
+    3 kolejka:
+    <center>Atletico Madryt<span style="color: green"><b> 3 - 2 </b></span>Liverpool</center>
+    <hr />
+</div>
+<div>
+    <hr />
+    4 kolejka:
+    <center>Liverpool<span style="color: green"><b> 2 - 0 </b></span>Atletico Madryt</center>
+    <hr />
+</div>
+<div>
+    <hr />
+    5 kolejka:
+    <center>Liverpool<span style="color: green"><b> 2 - 0 </b></span>F.C. Porto</center>
+    <hr />
+</div>
+<div>
+    <hr />
+    6 kolejka:
+    <center>A.C. Milan<span style="color: green"><b> 1 - 2 </b></span>Liverpool</center>
+    <hr />
+</div>
+<hr />
+<h3><center>1/8 FINAŁU</center></h3>
+
+<div>
+    
+    Mecz 1/2:
+    <center>Inter Mediolan<span style="color: green"><b> 0 - 2 </b></span>Liverpool</center>
+    
+</div>
+<div>
+    
+    Mecz 2/2:
+    <center>Liverpool<span style="color: red"><b> 0 - 1 </b></span>Inter Mediolan</center>
+    <hr />
+</div>
+<hr />
+<h3><center>ĆWIERĆFINAŁ</center></h3>
+
+<div>
+    
+    Mecz 1/2:
+    <center>Benfica Lizbona<span style="color: green"><b> 1 - 3 </b></span>Liverpool</center>
+    
+</div>
+<div>
+    
+    Mecz 2/2:
+    <center>Liverpool<span style="color: black"><b> 3 - 3 </b></span>Benfica Lizbona</center>
+    <hr />
+</div>
+<hr />
+<h3><center>PÓŁFINAŁ</center></h3>
+
+<div>
+    
+    Mecz 1/2:
+    <center>Liverpool<span style="color: green"><b> 2 - 0 </b></span>Villareal</center>
+    
+</div>
+<div>
+    
+    Mecz 2/2:
+    <center>Villareal<span style="color: black"><b>  -  </b></span>Liverpool</center>
+    <hr />
+</div>
+@code {
+    List<ligi>
+    tabela;
+    protected override void OnInitialized()
+    {
+        tabela = new List<ligi>
+    ()
+{
+    new ligi(){miejsce=1, druzyna="Liverpool", mecze=6, zwyciestwo=6, remis=0, porazka=0, gz=17, gs=6, bilans= 11, punkty=18},
+    new ligi(){miejsce=2, druzyna="Atletico Madryt", mecze=6, zwyciestwo=2, remis=1, porazka=3, gz=7, gs=8, bilans= -1, punkty=7},
+    new ligi(){miejsce=3, druzyna="F.C. Porto", mecze=6, zwyciestwo=1, remis=2, porazka=3, gz=4, gs=11, bilans= -7, punkty=5},
+    new ligi(){miejsce=4, druzyna="A.C. Milan", mecze=6, zwyciestwo=1, remis=1, porazka=4, gz=6, gs=9, bilans= -3, punkty=4},
+    };
+    }
+}

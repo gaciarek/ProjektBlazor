@@ -1,0 +1,146 @@
+﻿@page "/PL"
+<h1><center>TABELA PREMIER LEAGUE 2021/2022</center></h1>
+    <div class="mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Pozycja</th>
+                    <th scope="col">Drużyna</th>
+                    <th scope="col">Mecze</th>
+                    <th scope="col">Zwycięstwa</th>
+                    <th scope="col">Remisy</th>
+                    <th scope="col">Porażki</th>
+                    <th scope="col">Bramki zdobyte</th>
+                    <th scope="col">Bramki stracone</th>
+                    <th scope="col">Bilans</th>
+                    <th scope="col"><b>Punkty</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var t in tabela)
+                {
+                if (t.miejsce<5) {
+                <tr>
+                    <td bgcolor="blue">@t.miejsce</td>
+                    <td bgcolor="blue">@t.druzyna</td>
+                    <td bgcolor="blue">@t.mecze</td>
+                    <td bgcolor="blue">@t.zwyciestwo</td>
+                    <td bgcolor="blue">@t.remis</td>
+                    <td bgcolor="blue">@t.porazka</td>
+                    <td bgcolor="blue">@t.gz</td>
+                    <td bgcolor="blue">@t.gs</td>
+                    <td bgcolor="blue">@t.bilans</td>
+                    <th bgcolor="blue">@t.punkty</th>
+                </tr>
+                             }
+                else if (t.miejsce==5 || t.miejsce==6){
+                                          <tr>
+                    <td bgcolor="orange">@t.miejsce</td>
+                    <td bgcolor="orange">@t.druzyna</td>
+                    <td bgcolor="orange">@t.mecze</td>
+                    <td bgcolor="orange">@t.zwyciestwo</td>
+                    <td bgcolor="orange">@t.remis</td>
+                    <td bgcolor="orange">@t.porazka</td>
+                    <td bgcolor="orange">@t.gz</td>
+                    <td bgcolor="orange">@t.gs</td>
+                    <td bgcolor="orange">@t.bilans</td>
+                    <th bgcolor="orange">@t.punkty</th>
+                </tr>
+                                          }
+                else if (t.miejsce==7){
+                                          <tr>
+                                              <td bgcolor="green">@t.miejsce</td>
+                                              <td bgcolor="green">@t.druzyna</td>
+                                              <td bgcolor="green">@t.mecze</td>
+                                              <td bgcolor="green">@t.zwyciestwo</td>
+                                              <td bgcolor="green">@t.remis</td>
+                                              <td bgcolor="green">@t.porazka</td>
+                                              <td bgcolor="green">@t.gz</td>
+                                              <td bgcolor="green">@t.gs</td>
+                                              <td bgcolor="green">@t.bilans</td>
+                                              <th bgcolor="green">@t.punkty</th>
+                                          </tr>
+                }
+                    else if (t.miejsce>17){
+                                          <tr>
+                                              <td bgcolor="red">@t.miejsce</td>
+                                              <td bgcolor="red">@t.druzyna</td>
+                                              <td bgcolor="red">@t.mecze</td>
+                                              <td bgcolor="red">@t.zwyciestwo</td>
+                                              <td bgcolor="red">@t.remis</td>
+                                              <td bgcolor="red">@t.porazka</td>
+                                              <td bgcolor="red">@t.gz</td>
+                                              <td bgcolor="red">@t.gs</td>
+                                              <td bgcolor="red">@t.bilans</td>
+                                              <th bgcolor="red">@t.punkty</th>
+                                          </tr>
+                }
+                else{
+                                          <tr>
+                                              <td>@t.miejsce</td>
+                                              <td>@t.druzyna</td>
+                                              <td>@t.mecze</td>
+                                              <td>@t.zwyciestwo</td>
+                                              <td>@t.remis</td>
+                                              <td>@t.porazka</td>
+                                              <td>@t.gz</td>
+                                              <td>@t.gs</td>
+                                              <td>@t.bilans</td>
+                                              <th>@t.punkty</th>
+                                          </tr>
+                }
+                }
+            </tbody>
+        </table>
+    </div>
+<div>
+    <table>
+        <tr>
+            <td bgcolor="blue"><span style="color: blue">11111</span></td>
+            <td>Awans do Ligi Mistrzów</td>
+        </tr>
+        <tr>
+            <td bgcolor="orange"><span style="color: orange">11111</span></td>
+            <td>Awans do Ligi Europy</td>
+        </tr>
+        <tr>
+            <td bgcolor="green"><span style="color: green">11111</span></td>
+            <td>Awans do Ligi Konfederacji</td>
+        </tr>
+        <tr>
+            <td bgcolor="red"><span style="color: red">11111</span></td>
+            <td>Spadek do Championship</td>
+        </tr>
+    </table>
+</div>
+    @code {
+    List<ligi>
+        tabela;
+        protected override void OnInitialized()
+        {
+        tabela = new List<ligi>
+    ()
+    {
+    new ligi(){miejsce=1, druzyna="Manchester City", mecze=34, zwyciestwo=26, remis=5, porazka=3, gz=84, gs=21, bilans= +63, punkty=83},
+    new ligi(){miejsce=2, druzyna="Liverpool", mecze=34, zwyciestwo=25, remis=7, porazka=2, gz=86, gs=22, bilans= +64, punkty=82},
+    new ligi(){miejsce=3, druzyna="Chelsea Londyn", mecze=34, zwyciestwo=19, remis=9, porazka=6, gz=68, gs=29, bilans= 39, punkty=66},
+    new ligi(){miejsce=4, druzyna="Arsenal Londyn", mecze=34, zwyciestwo=20, remis=3, porazka=11, gz=54, gs=41, bilans= 13, punkty=63},
+    new ligi(){miejsce=5, druzyna="Tottenham", mecze=34, zwyciestwo=19, remis=4, porazka=11, gz=59, gs=39, bilans= 20, punkty=61},
+    new ligi(){miejsce=6, druzyna="Manchester United", mecze=36, zwyciestwo=16, remis=10, porazka=10, gz=57, gs=52, bilans= 5, punkty=58},
+    new ligi(){miejsce=7, druzyna="West Ham", mecze=35, zwyciestwo=15, remis=7, porazka=13, gz=53, gs=46, bilans= 7, punkty=52},
+    new ligi(){miejsce=8, druzyna="Wolves", mecze=34, zwyciestwo=15, remis=4, porazka=15, gz=33, gs=32, bilans= 1, punkty=49},
+    new ligi(){miejsce=9, druzyna="Brighton", mecze=35, zwyciestwo=10, remis=14, porazka=11, gz=34, gs=42, bilans= -8, punkty=44},
+    new ligi(){miejsce=10, druzyna="Newcastle", mecze=35, zwyciestwo=11, remis=14, porazka=10, gz=40, gs=56, bilans= -16, punkty=43},
+    new ligi(){miejsce=11, druzyna="Leicester City", mecze=33, zwyciestwo=11, remis=9, porazka=13, gz=48, gs=54, bilans= -6, punkty=42},
+    new ligi(){miejsce=12, druzyna="Crystal Palace", mecze=34, zwyciestwo=9, remis=14, porazka=11, gz=45, gs=42, bilans= 3, punkty=41},
+    new ligi(){miejsce=13, druzyna="Aston Villa", mecze=33, zwyciestwo=12, remis=4, porazka=17, gz=44, gs=46, bilans= -2, punkty=40},
+    new ligi(){miejsce=14, druzyna="Brentford", mecze=35, zwyciestwo=11, remis=7, porazka=17, gz=41, gs=52, bilans= -11, punkty=40},
+    new ligi(){miejsce=15, druzyna="Southampton", mecze=35, zwyciestwo=9, remis=13, porazka=13, gz=41, gs=58, bilans= -17, punkty=40},
+    new ligi(){miejsce=16, druzyna="Burnley", mecze=34, zwyciestwo=7, remis=13, porazka=14, gz=31, gs=46, bilans= -15, punkty=34},
+    new ligi(){miejsce=17, druzyna="Leeds United", mecze=34, zwyciestwo=8, remis=10, porazka=16, gz=38, gs=72, bilans= -34, punkty=34},
+    new ligi(){miejsce=18, druzyna="Everton", mecze=33, zwyciestwo=9, remis=5, porazka=19, gz=35, gs=55, bilans= -20, punkty=32},
+    new ligi(){miejsce=19, druzyna="Watford", mecze=34, zwyciestwo=6, remis=4, porazka=24, gz=32, gs=69, bilans= -37, punkty=22},
+    new ligi(){miejsce=20, druzyna="Norwich", mecze=34, zwyciestwo=5, remis=6, porazka=23, gz=22, gs=71, bilans= -49, punkty=21},
+    };
+    }
+    }

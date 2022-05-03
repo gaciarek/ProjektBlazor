@@ -1,0 +1,65 @@
+﻿@page "/Strzelcy"
+<h1><center>Strzelcy sezonu 2021/2022</center></h1>
+<div class="mt-5">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Pozycja</th>
+                <th scope="col">Imię i Nazwisko</th>
+                <th scope="col">Premier League</th>
+                <th scope="col">Liga Mistrzów</th>
+                <th scope="col">Puchar Anglii</th>
+                <th scope="col">Puchar Ligi</th>
+                <th scope="col"><b>Suma</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var s in strzelcy)
+            {
+            <tr>
+                <td>@s.id</td>
+                <td>@s.imie_nazwisko</td>
+                <td>@s.PL</td>
+                <td>@s.LM</td>
+                <td>@s.FA</td>
+                <td>@s.LA</td>
+                <th>@s.suma</th>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    List<bramki> strzelcy;
+    protected override void OnInitialized()
+    {
+        strzelcy = new List<bramki>()
+        {
+                new bramki(){id = 1, imie_nazwisko= "Mohamed Salah",PL = 22, LM = 8, FA = 0 , LA= 0, suma=30 ,},
+                new bramki(){id = 2, imie_nazwisko= "Diogo Jota",PL = 15, LM =1 , FA =2 , LA=3 , suma=21,},
+                new bramki(){id = 3, imie_nazwisko= "Sadio Mané ",PL = 14, LM =4 , FA =2 , LA= 0, suma=20 ,},
+                new bramki(){id = 4, imie_nazwisko= "Roberto Firmino",PL = 5, LM =5 , FA =1 , LA=0 , suma=11 ,},
+                new bramki(){id = 5, imie_nazwisko= "Takumi Minamino",PL = 2, LM =0 , FA =3 , LA=4 , suma=9 ,},
+                new bramki(){id = 6, imie_nazwisko= "Fabinho",PL = 5, LM =0 , FA =2 , LA=0 , suma= 7,},
+                new bramki(){id = 7, imie_nazwisko= "Divock Origi",PL = 3, LM =1 , FA =0 , LA=2 , suma=6 ,},
+                new bramki(){id = 8, imie_nazwisko= "Luis Díaz",PL = 3, LM =1 , FA =0 , LA=0 , suma=4 ,},
+                new bramki(){id = 8, imie_nazwisko= "Naby Keïta",PL = 3, LM =1 , FA =0 , LA=0 , suma=4 ,},
+                new bramki(){id = 10, imie_nazwisko= "Ibrahima Konaté",PL = 0, LM =2 , FA =1 , LA=0 , suma=3 ,},
+                new bramki(){id = 10, imie_nazwisko= "Jordan Henderson",PL = 2, LM =1 , FA =0 , LA=0 , suma=3 ,},
+                new bramki(){id = 10, imie_nazwisko= "Virgil van Dijk",PL = 3, LM =0 , FA =0 , LA=0 , suma=3 ,},
+                new bramki(){id = 10, imie_nazwisko= "Alex Oxlade-Chamberlain",PL = 2, LM =0 , FA =0 , LA=1 , suma=3 ,},
+                new bramki(){id = 14, imie_nazwisko= "Thiago Alcântara",PL = 1, LM =1 , FA =0 , LA=0 , suma=2 ,},
+                new bramki(){id = 14, imie_nazwisko= "Trent Alexander-Arnold",PL = 2, LM =0 , FA =0 , LA=0 , suma=2 ,},
+                new bramki(){id = 14, imie_nazwisko= "Andrew Robertson",PL = 2, LM =0 , FA =0 , LA=0 , suma=2 ,},
+                new bramki(){id = 17, imie_nazwisko= "Curtis Jones",PL = 1, LM =0 , FA =0 , LA=0 , suma=1 ,},
+                new bramki(){id = 17, imie_nazwisko= "Joël Matip",PL = 1, LM =0 , FA =0 , LA=0 , suma=1 ,},
+                new bramki(){id = 17, imie_nazwisko= "Harvey Elliott",PL = 0, LM =0 , FA =1 , LA=0 , suma=1 ,},
+                new bramki(){id = 17, imie_nazwisko= "Kaide Gordon",PL = 0, LM =0 , FA = 1, LA=0 , suma=1 ,},
+
+
+
+    };
+    }
+
+}
